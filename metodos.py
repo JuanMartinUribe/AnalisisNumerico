@@ -1,8 +1,8 @@
 from Funcion import *
 print("introduce la funcion en terminos de x ")
 expr = input()
-f = Funcion(expr)
-def busquedas(a,b,Nmax):
+x = Funcion(expr)
+def busquedas(f,a,b,Nmax):
     xant=a
     fant=f.evaluar(f.getF(),xant)
     xact=xant+b
@@ -15,7 +15,7 @@ def busquedas(a,b,Nmax):
         xact=xant+b
         fact=f.evaluar(f.getF(),xact)
     return [xant, xact, i]
-def biseccion(a,b,tol,Nmax):
+def biseccion(f,a,b,tol,Nmax):
     m0=a
     m=b
     cont = 0
@@ -43,5 +43,5 @@ a = float(input("introduce el intervalo inicial "))
 b= float(input("introduce el intervalo final "))
 tol= float(input("introduce la tolerancia "))
 Nmax = float(input("introduce las iteraciones maximas "))
-resul= biseccion(a,b,tol,Nmax)
+resul= biseccion(x,a,b,tol,Nmax)
 print(resul)
