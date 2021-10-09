@@ -12,6 +12,9 @@ class Funcion:
     def evaluar(self,expr,a):
         y=sympify(expr,evaluate=True).subs(x,a)
         return y
+    def derivada(self):
+        y= diff(self.f,x)
+        return y
 
 """print("introduce la funcion en terminos de x ")
 expr = input()
@@ -19,4 +22,4 @@ f = Funcion(expr)
 
 print("introduce el valor a evaluar")
 a = input()
-print(f.evaluar(f.getF(),a))"""
+print(f.derivada())"""
