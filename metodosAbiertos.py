@@ -42,7 +42,7 @@ def multiplesRaices(f,x0,tol,Nmax):
     fderivada = df.evaluar(df.getF(),x0)
     fderivada2 =df2.evaluar(df2.getF(),x0)
     while(cont<Nmax and error>tol):
-        xn = x0 - ((factual*fderivada)/((fderivada)*fderivada)-((factual)*fderivada2))
+        xn = x0 - ((factual*fderivada)/((fderivada*fderivada)-(factual*fderivada2)))
         error = abs(xn-x0)
         cont = cont + 1
         x0 = xn
@@ -53,9 +53,10 @@ def multiplesRaices(f,x0,tol,Nmax):
 print("introduce la funcion en terminos de x ")
 expr = input()
 x = Funcion(expr)
-a = int(input("introduce el intervalo inicial "))
+a = float(input("introduce el intervalo inicial "))
 b= float(input("introduce el intervalo final "))
 tol= float(input("introduce la tolerancia "))
 Nmax = float(input("introduce las iteraciones maximas "))
-resul= multiplesRaices(x,a,tol,Nmax)
+resul = newton(x,a,tol,Nmax)
+"""resul= multiplesRaices(x,a,tol,Nmax)"""
 print(resul)
