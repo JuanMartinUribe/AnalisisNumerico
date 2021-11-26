@@ -21,7 +21,7 @@ def punto_fijo_menu():
     console.print('Ingrese los parámetros solicitados', style='bold green on black')
     expr = input("introduce la funcion en terminos de x ")
     x = Funcion(expr)
-    a = float(input("introduce el intervalo inicial "))
+    a = float(input("introduce el punto incial "))
 
     tol = float(input("introduce la tolerancia "))
     Nmax = float(input("introduce las iteraciones maximas "))
@@ -38,7 +38,7 @@ def punto_fijo(g, x0, tol, Nmax):
         error = abs(xn - x0)
         cont = cont + 1
         x0 = xn
-    if E > tol:
+    if error > tol:
         cadena = "Hay una raiz que no cumple con esa tolerancia en el x = " + str(xn) + " en el intervalo =  " + str(
             cont) + " con error = " + str(error)
     else:
@@ -73,7 +73,7 @@ def newton(f, x0, tol, Nmax):
         x0 = xn
         f0 = f.evaluar(f.getF(), x0)
         f1 = df.evaluar(df.getF(), x0)
-    if E > tol:
+    if error > tol:
         cadena = "Hay una raiz que no cumple con esa tolerancia en el x = " + str(xn) + " en el intervalo =  " + str(
             cont) + " con error = " + str(error)
     else:
@@ -86,8 +86,8 @@ def secante_menu():
     console.print('Ingrese los parámetros solicitados', style='bold green on black')
     expr = input("introduce la funcion en terminos de x ")
     x = Funcion(expr)
-    a = float(input("introduce el intervalo inicial "))
-    b = float(input("introduce el intervalo final "))
+    a = float(input("introduce el x0 "))
+    b = float(input("introduce el x1 "))
 
     tol = float(input("introduce la tolerancia "))
     Nmax = float(input("introduce las iteraciones maximas "))
@@ -105,7 +105,7 @@ def secante(f, x0, x1, tol, Nmax):
         cont = cont + 1
         x0 = x1
         x1 = xn
-    if E > tol:
+    if error > tol:
         cadena = "Hay una raiz que no cumple con esa tolerancia en el x = " + str(xn) + " en el intervalo =  " + str(
             cont) + " con error = " + str(error)
     else:
@@ -118,7 +118,7 @@ def multiples_raices_menu():
     console.print('Ingrese los parámetros solicitados', style='bold green on black')
     expr = input("introduce la funcion en terminos de x ")
     x = Funcion(expr)
-    a = float(input("introduce el intervalo inicial "))
+    a = float(input("introduce el x inicial "))
 
     tol = float(input("introduce la tolerancia "))
     Nmax = float(input("introduce las iteraciones maximas "))
@@ -143,7 +143,7 @@ def multiples_raices(f, x0, tol, Nmax):
         factual = f.evaluar(f.getF(), x0)
         fderivada = df.evaluar(df.getF(), x0)
         fderivada2 = df2.evaluar(df2.getF(), x0)
-    if E > tol:
+    if error > tol:
         cadena = "Hay una raiz que no cumple con esa tolerancia en el x = " + str(xn) + " en el intervalo =  " + str(
             cont) + " con error = " + str(error)
     else:

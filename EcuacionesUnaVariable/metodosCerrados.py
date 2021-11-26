@@ -9,8 +9,8 @@ def busquedas_menu():
     console.print('Ingrese los parámetros solicitados', style='bold green on black')
     expr = input("introduce la funcion en terminos de x ")
     x = Funcion(expr)
-    a = float(input("introduce el intervalo inicial "))
-    b = float(input("introduce el intervalo final "))
+    a = float(input("introduce el X inicial "))
+    b = float(input("introduce el delta "))
 
     Nmax = float(input("introduce las iteraciones maximas "))
 
@@ -78,10 +78,10 @@ def biseccion(f, a, b, tol, Nmax):
         cont = cont + 1
         E = abs(m0 - m)
     if E > tol:
-        cadena = "Hay una raiz que no cumple con esa tolerancia en el x = " + str(m) + " en el intervalo =  " + str(
+        cadena = "Hay una raiz que no cumple con esa tolerancia en el x = " + str(m) + " en la iteración =  " + str(
             cont) + " con error = " + str(E)
     else:
-        cadena = "Hay una raiz que cumple con esa tolerancia en el x = " + str(m) + " en el intervalo =  " + str(
+        cadena = "Hay una raiz que cumple con esa tolerancia en el x = " + str(m) + " en la iteración =  " + str(
             cont) + " con error = " + str(E)
     return cadena
 

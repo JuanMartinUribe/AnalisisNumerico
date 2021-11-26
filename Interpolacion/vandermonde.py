@@ -19,15 +19,21 @@ def Vandermonde(n, x, y):
     new_ys = [point[1] for point in sorted_points]
     xn = np.array(new_xs)
     yn = np.array([new_ys]).T
-    print("Los x en orden son: ")
-    print(xn)
-    print("Los y en orden son: ")
-    print(yn)
+    print()
+    console.print("Los x en orden son: ", style= "bold magenta")
+    console.print(xn)
+    print()
+    console.print("Los y en orden son: ", style= "bold magenta")
+    console.print(yn)
     A = np.vander(xn)
     Ainv = np.linalg.inv(A)
     a = np.dot(Ainv, yn)
-    print(a)
+    print()
+    console.print("Dot= ", style= "bold magenta")
+    console.print(a)
+    print()
     str1 = ""
+    print()
     for i in range(n):
-        str1 = str1 + "a" + str(n - 1 - i) + " = " + str(a[i])
+        str1 = str1 + "a" + str(n - 1 - i) + " = " + str(a[i]) + " "
     return str1
