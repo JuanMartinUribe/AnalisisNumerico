@@ -10,7 +10,7 @@ def difdivid_menu():
     n = int(input(f'Ingresar n: '))
     x = list(map(float, input(f'Ingresar vector x separado por espacios: ').split()))
     y = list(map(float, input(f'Ingresar vector y separado por espacios: ').split()))
-    difdivid(x, y)
+    console.print(difdivid(x, y))
 
 
 def difdivid(Vx, Vy):

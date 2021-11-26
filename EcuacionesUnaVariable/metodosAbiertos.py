@@ -27,7 +27,7 @@ def punto_fijo_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(punto_fijo(x, a, tol, Nmax)))
+    console.print(punto_fijo(x, a, tol, Nmax))
 
 
 def punto_fijo(g, x0, tol, Nmax):
@@ -57,7 +57,7 @@ def newton_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(newton(x, a, tol, Nmax)))
+    console.print(newton(x, a, tol, Nmax))
 
 
 def newton(f, x0, tol, Nmax):
@@ -93,7 +93,7 @@ def secante_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(secante(x, a, b, tol, Nmax)))
+    console.print(secante(x, a, b, tol, Nmax))
 
 
 def secante(f, x0, x1, tol, Nmax):
@@ -124,7 +124,7 @@ def multiples_raices_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(multiples_raices(x, a, tol, Nmax)))
+    console.print(multiples_raices(x, a, tol, Nmax))
 
 
 def multiples_raices(f, x0, tol, Nmax):

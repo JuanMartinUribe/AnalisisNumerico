@@ -15,7 +15,7 @@ def busquedas_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(busquedas(x, a, b, Nmax)))
+    console.print(busquedas(x, a, b, Nmax))
 
 
 def busquedas(f, a, b, Nmax):
@@ -40,8 +40,6 @@ def busquedas(f, a, b, Nmax):
         return ["no se encontro"]
 
 
-
-
 def biseccion_menu():
     console.print('Ingrese los parámetros solicitados', style='bold green on black')
     expr = input("introduce la funcion en terminos de x ")
@@ -53,7 +51,7 @@ def biseccion_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(biseccion(x, a, b, tol, Nmax)))
+    console.print(biseccion(x, a, b, tol, Nmax))
 
 
 def biseccion(f, a, b, tol, Nmax):
@@ -99,7 +97,7 @@ def regla_falsa_menu():
     Nmax = float(input("introduce las iteraciones maximas "))
 
     print('=' * 50)
-    console.print(DataFrame(regla_falsa(x, a, b, tol, Nmax)))
+    console.print(regla_falsa(x, a, b, tol, Nmax))
 
 
 def regla_falsa(f, a, b, tol, Nmax):

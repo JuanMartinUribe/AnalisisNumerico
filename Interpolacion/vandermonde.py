@@ -9,7 +9,7 @@ def vandermonde_menu():
     n = int(input(f'Ingresar n: '))
     x = list(map(float, input(f'Ingresar vector x separado por espacios: ').split()))
     y = list(map(float, input(f'Ingresar vector y separado por espacios: ').split()))
-    Vandermonde(n, x, y)
+    console.print(Vandermonde(n, x, y))
 
 
 def Vandermonde(n, x, y):

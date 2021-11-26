@@ -21,7 +21,7 @@ def gausspar_menu():
     console.print(f'Ingresar Vector B separado por espacios y saltos de línea')
     b = read_matrix(n)
     print('=' * 50)
-    console.print(DataFrame(gausspar(a, b)))
+    console.print(gausspar(a, b))
 
 
 a = [[-7., 2, -3, 4],

@@ -29,7 +29,7 @@ def jacobi_menu():
     tolerancia = float(input())
 
     print('=' * 50)
-    console.print(DataFrame(jacobi(a, b, max_iter, x0, tolerancia)))
+    console.print(jacobi(a, b, max_iter, x0, tolerancia))
 
 
 def jacobi(a, b, n, x0=None, tol=None):

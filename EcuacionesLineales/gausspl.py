@@ -28,7 +28,7 @@ def gausspl_menu():
     console.print(f'Ingresar Vector B separado por espacios y saltos de línea')
     b = read_matrix(n)
     print('=' * 50)
-    console.print(DataFrame(gausspl(a, b)))
+    console.print(gausspl(a, b))
 
 
 def gausspl(a, b):

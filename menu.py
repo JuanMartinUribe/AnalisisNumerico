@@ -36,7 +36,7 @@ single_var = {'Punto fijo': punto_fijo_menu, 'Newton': newton_menu, 'Secante': s
               'Biseccion': biseccion_menu, 'Regla falsa': regla_falsa_menu}
 
 lineal = {'Gauss par': gausspar_menu, 'Gauss simple': gausspl_menu, 'Gauss seidel': gseidel_menu,
-          'Gauss total': gausstot_menu, 'Jacobi': jacobi_menu, 'LU simple': LUsimple_menu}
+          'Jacobi': jacobi_menu, 'LU simple': LUsimple_menu}
 
 interpolation = {'Vandermonde': vandermonde_menu, 'Diferencias divididas': difdivid_menu}
 

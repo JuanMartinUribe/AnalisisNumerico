@@ -29,7 +29,7 @@ def gseidel_menu():
     tolerancia = float(input())
 
     print('=' * 50)
-    console.print(DataFrame(gseidel(a, b, max_iter, x0, tolerancia)))
+    console.print(gseidel(a, b, max_iter, x0, tolerancia))
 
 
 def gseidel(a, b, n, x0=None, tol=None):
