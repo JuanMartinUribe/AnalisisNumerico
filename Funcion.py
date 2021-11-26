@@ -21,5 +21,6 @@ expr = input()
 f = Funcion(expr)
 
 print("introduce el valor a evaluar")
-a = input()
-print(f.derivada())"""
+a = float(input())
+z= f.evaluar(f.getF(),a)
+print(z)"""

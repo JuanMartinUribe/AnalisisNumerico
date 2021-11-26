@@ -1,12 +1,12 @@
 from numpy import *
-from numpy import *
+
 import numpy
-import sympy
+
 
 
 def susRegr(A):
     n=len(A)
-    
+    cadena=""
     x=numpy.zeros((n), dtype=float)
     
     for i in range(n-1,-1,-1):
@@ -17,4 +17,7 @@ def susRegr(A):
             
         x[i]=(A[i][n]-sum)/A[i][i]
         
-    return x
+    for i in range(0,len(x),1):
+        cadena=cadena+"x"+str(i)+"= "+str(x[i])+ " "
+    
+    return cadena

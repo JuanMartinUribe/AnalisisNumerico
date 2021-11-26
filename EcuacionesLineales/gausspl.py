@@ -1,12 +1,12 @@
 from numpy import *
 from sustRegr import *
 import numpy
-a = [[2., -1, -3, 2],
-     [5, -10, 2, -6],
-     [5, -9, 15, -6],
-     [2, 1, -1, 10]
+a = [[-7., 2, -3, 4],
+     [5, -1, 14, -1],
+     [1, 9, -7, 5],
+     [-12, 13, -8, -4]
      ]
-b= [[4],[3],[2],[1]]
+b= [[-12],[13],[31],[-32]]
 def gausspl(A,b):
     
     Ma=numpy.append(A,b, axis=1)
@@ -18,10 +18,8 @@ def gausspl(A,b):
             else:
                 return("pivote en 0")
             for j in range(k,n+1,1):
-                Ma[i][j]=Ma[i][j] - (mult*Ma[k][j])
-                
-    
-    
+                Ma[i][j]=Ma[i][j] - (mult*Ma[k][j])           
+    print(Ma)
     x=susRegr(Ma)
     return x
     

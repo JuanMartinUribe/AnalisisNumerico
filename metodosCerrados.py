@@ -46,8 +46,13 @@ def biseccion(f,a,b,tol,Nmax):
             a=m
         cont = cont + 1
         E=abs(m0-m)
-    return [m,cont,E]
+    if(E>tol):
+        cadena="Hay una raiz que no cumple con esa tolerancia en el x = " + str(m)+ " en el intervalo =  " + str(cont) + " con error = " + str(E)
+    else:
+        cadena="Hay una raiz que cumple con esa tolerancia en el x = " + str(m)+ " en el intervalo =  " + str(cont) + " con error = " + str(E)
+    return cadena
 def reglaFalsa(f,a,b,tol,Nmax):
+    cadena=""
     m0=a
     m=b
     cont = 0
@@ -70,11 +75,12 @@ def reglaFalsa(f,a,b,tol,Nmax):
             a=m
         cont = cont + 1
         E=abs(m0-m)
-    return [m,cont,E]
+    cadena="Hay una raiz que cumple con esa tolerancia en el x = " + str(m)+ " en el intervalo =  " + str(cont) + " con error = " + str(E)
+    return cadena
 a = float(input("introduce el intervalo inicial "))
 b= float(input("introduce el intervalo final "))
-"""tol= float(input("introduce la tolerancia "))"""
+tol= float(input("introduce la tolerancia "))
 Nmax = float(input("introduce las iteraciones maximas "))
-"""resul= biseccion(x,a,b,tol,Nmax)"""
-resul=busquedas(x,a,b,Nmax)
+resul= biseccion(x,a,b,tol,Nmax)
+"""resul=busquedas(x,a,b,Nmax)"""
 print(resul)
