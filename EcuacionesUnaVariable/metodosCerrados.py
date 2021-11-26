@@ -1,8 +1,21 @@
 from Funcion import *
+from pandas import DataFrame
+from rich.console import Console
 
-print("introduce la funcion en terminos de x ")
-expr = input()
-x = Funcion(expr)
+console = Console()
+
+
+def busquedas_menu():
+    console.print('Ingrese los parámetros solicitados', style='bold green on black')
+    expr = input("introduce la funcion en terminos de x ")
+    x = Funcion(expr)
+    a = float(input("introduce el intervalo inicial "))
+    b = float(input("introduce el intervalo final "))
+
+    Nmax = float(input("introduce las iteraciones maximas "))
+
+    print('=' * 50)
+    console.print(DataFrame(busquedas(x, a, b, Nmax)))
 
 
 def busquedas(f, a, b, Nmax):
@@ -25,6 +38,22 @@ def busquedas(f, a, b, Nmax):
         return [xant, xact]
     else:
         return ["no se encontro"]
+
+
+
+
+def biseccion_menu():
+    console.print('Ingrese los parámetros solicitados', style='bold green on black')
+    expr = input("introduce la funcion en terminos de x ")
+    x = Funcion(expr)
+    a = float(input("introduce el intervalo inicial "))
+    b = float(input("introduce el intervalo final "))
+
+    tol = float(input("introduce la tolerancia "))
+    Nmax = float(input("introduce las iteraciones maximas "))
+
+    print('=' * 50)
+    console.print(DataFrame(biseccion(x, a, b, tol, Nmax)))
 
 
 def biseccion(f, a, b, tol, Nmax):
@@ -59,7 +88,21 @@ def biseccion(f, a, b, tol, Nmax):
     return cadena
 
 
-def reglaFalsa(f, a, b, tol, Nmax):
+def regla_falsa_menu():
+    console.print('Ingrese los parámetros solicitados', style='bold green on black')
+    expr = input("introduce la funcion en terminos de x ")
+    x = Funcion(expr)
+    a = float(input("introduce el intervalo inicial "))
+    b = float(input("introduce el intervalo final "))
+
+    tol = float(input("introduce la tolerancia "))
+    Nmax = float(input("introduce las iteraciones maximas "))
+
+    print('=' * 50)
+    console.print(DataFrame(regla_falsa(x, a, b, tol, Nmax)))
+
+
+def regla_falsa(f, a, b, tol, Nmax):
     cadena = ""
     m0 = a
     m = b

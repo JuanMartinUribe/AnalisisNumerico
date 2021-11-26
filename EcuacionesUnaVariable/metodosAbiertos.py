@@ -5,13 +5,6 @@ from rich.console import Console
 console = Console()
 
 
-def read_matrix(m_size):
-    lista = [list(map(float, input().split())) for x in range(m_size)]
-    if False in [bool(i) for i in lista]:
-        return None
-    return lista
-
-
 """print()
 expr = input("introduce la funcion en terminos de x ")
 x = Funcion(expr)
