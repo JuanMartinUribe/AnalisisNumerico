@@ -1,7 +1,7 @@
 import numpy
 
 
-def susRegr(A):
+def sust_regr(A):
     n = len(A)
     cadena = ""
     x = numpy.zeros(n, dtype=float)

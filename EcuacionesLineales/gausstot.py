@@ -1,7 +1,28 @@
 import numpy as np
+from pandas import DataFrame
+from rich.console import Console
+
+console = Console()
 
 
-def gaussTot(a, b):
+def read_matrix(m_size):
+    lista = [list(map(float, input().split())) for x in range(m_size)]
+    if False in [bool(i) for i in lista]:
+        return None
+    return lista
+
+
+def gausstot_menu():
+    console.print('Ingrese los parámetros solicitados', style='bold green on black')
+    n = int(input(f'Ingresar tamaño de matriz: '))
+    console.print(f'Ingresar matriz A separado por espacios y saltos de línea')
+    a = read_matrix(n)
+    console.print(f'Ingresar Vector B separado por espacios y saltos de línea')
+    b = read_matrix(n)
+    print('=' * 50)
+    console.print(DataFrame(gausstot(a, b)))
+
+def gausstot(a, b):
     # Se crea un numpy array de n*(n+1) para guardar la matriz aumentada
     Ma = np.append(a, b, axis=1)
     n = len(Ma)
@@ -18,7 +39,7 @@ def gaussTot(a, b):
     cont = 0
     for i in range(n):
         for j in range(n + 1):
-            a[i][j] = A[cont][0]
+            a[i][j] = a[cont][0]
             cont = cont + 1
     # Gauss
     c = 0
@@ -35,12 +56,12 @@ def gaussTot(a, b):
                             columnaN = j
                             filaN = i
                             Max = abs(a[i][j])
-        if (columnaN != k):
+        if columnaN != k:
             a[:, [columnaN, k]] = a[:, [k, columnaN]]
             # vector de marcas
             x1[k], x1[columnaN] = x1[columnaN], x1[k]
             # Hacer el cambio del vector de terminos independientes
-        if (filaN != k):
+        if filaN != k:
             c = c + 1
             a[[k, filaN]] = a[[filaN, k]]
             print("Transformación: " + str(c))
@@ -69,11 +90,13 @@ def gaussTot(a, b):
     return str1
 
 
+'''
 a = [[-7., 2, -3, 4],
      [5, -1, 14, -1],
      [1, 9, -7, 5],
      [-12, 13, -8, -4]
      ]
 b = [[-12], [13], [31], [-32]]
-z = gaussTot(a, b)
+z = gausstot(a, b)
 print(z)
+'''

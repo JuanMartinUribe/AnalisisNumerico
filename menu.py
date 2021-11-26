@@ -2,13 +2,14 @@ from rich import pretty
 from rich.console import Console
 
 from EcuacionesLineales.gausspar import gausspar_menu
+from EcuacionesLineales.gausstot import gausstot_menu
 from EcuacionesLineales.gausspl import gausspl_menu
 from EcuacionesLineales.gseidel import gseidel_menu
 from EcuacionesLineales.jacobi import jacobi_menu
 from EcuacionesLineales.LUsimple import LUsimple_menu
-from Interpolacion.vandermonde import vandermonde_menu
 
-from Interpolacion.vandermonde import Vandermonde
+from Interpolacion.vandermonde import vandermonde_menu
+from Interpolacion.difDividas import difdivid_menu
 
 
 pretty.install()
@@ -29,8 +30,8 @@ def display_menu(options):
 
 
 single_var = {}
-lineal = {'Gauss par': gausspar_menu, 'Gauss simple': gausspl_menu, 'Gauss seidel': gseidel_menu, 'Jacobi': jacobi_menu, 'LU simple': LUsimple_menu}
-interpolation = {'Vandermonde': vandermonde_menu}
+lineal = {'Gauss par': gausspar_menu, 'Gauss simple': gausspl_menu, 'Gauss seidel': gseidel_menu, 'Gauss total': gausstot_menu(), 'Jacobi': jacobi_menu, 'LU simple': LUsimple_menu}
+interpolation = {'Vandermonde': vandermonde_menu, 'Diferencias divididas': difdivid_menu1}
 categorias = {'Ecuaciones de una variable': single_var, 'Ecuaciones lineales': lineal, 'Interpolación': interpolation}
 
 

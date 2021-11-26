@@ -7,8 +7,8 @@ console = Console()
 def vandermonde_menu():
     console.print('Ingrese los parámetros solicitados', style='bold green on black')
     n = int(input(f'Ingresar n: '))
-    x = input(f'Ingresar vector x separado por espacios: ').split()
-    y = input(f'Ingresar vector y separado por espacios: ').split()
+    x = list(map(float, input(f'Ingresar vector x separado por espacios: ').split()))
+    y = list(map(float, input(f'Ingresar vector y separado por espacios: ').split()))
     Vandermonde(n, x, y)
 
 

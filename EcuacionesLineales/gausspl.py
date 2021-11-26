@@ -14,7 +14,10 @@ console = Console()
 
 
 def read_matrix(m_size):
-    return [list(map(int, input().split())) for x in range(m_size)]
+    lista = [list(map(float, input().split())) for x in range(m_size)]
+    if False in [bool(i) for i in lista]:
+        return None
+    return lista
 
 
 def gausspl_menu():
