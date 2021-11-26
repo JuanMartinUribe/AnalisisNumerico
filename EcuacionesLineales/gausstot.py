@@ -22,6 +22,7 @@ def gausstot_menu():
     print('=' * 50)
     console.print(DataFrame(gausstot(a, b)))
 
+
 def gausstot(a, b):
     # Se crea un numpy array de n*(n+1) para guardar la matriz aumentada
     Ma = np.append(a, b, axis=1)
