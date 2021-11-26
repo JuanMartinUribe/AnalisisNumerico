@@ -1,4 +1,4 @@
-from Funcion import *
+from .Funcion import *
 from pandas import DataFrame
 from rich.console import Console
 
